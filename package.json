@@ -1,0 +1,26 @@
+{
+  "name": "binocular-lamp",
+  "version": "0.0.0",
+  "description": "WebGL demo",
+  "main": "./src/index.js",
+  "dependencies": {
+    "gl-buffer": "^2.1.1",
+    "gl-now": "^1.3.1",
+    "gl-texture2d": "^2.0.8",
+    "glslify": "^1.4.0"
+  },
+  "devDependencies": {
+    "ndpack-image": "^1.0.4"
+  },
+  "scripts": {
+    "build-img": "ndpack-image ./lib/img/grass.png > ./lib/img.js",
+    "build": "rm ./public/js/main.js; browserify ./src/index.js -o ./public/js/main.js -t glslify",
+    "start": "cd public; python -m SimpleHTTPServer"
+  },
+  "keywords": [
+    "webgl",
+    "glsl"
+  ],
+  "author": "joates (http://joat.es)",
+  "license": "MIT"
+}
