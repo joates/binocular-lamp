@@ -29,4 +29,5 @@ node_modules
 
 # custom
 lib/img
-public/js
+public/js/main.js
+public/favicon.ico

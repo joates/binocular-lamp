@@ -1,8 +1,19 @@
 {
   "name": "binocular-lamp",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "WebGL demo",
-  "main": "./src/index.js",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joates/binocular-lamp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joates/binocular-lamp/issues"
+  },
+  "homepage": "https://github.com/joates/binocular-lamp",
+  "engines": {
+    "node": "0.10.x"
+  },
   "dependencies": {
     "gl-buffer": "^2.1.1",
     "gl-now": "^1.3.1",
@@ -13,14 +24,13 @@
     "ndpack-image": "^1.0.4"
   },
   "scripts": {
-    "build-img": "ndpack-image ./lib/img/grass.png > ./lib/img.js",
-    "build": "rm ./public/js/main.js; browserify ./src/index.js -o ./public/js/main.js -t glslify",
-    "start": "cd public; python -m SimpleHTTPServer"
+    "build": "browserify src/index.js -t glslify > public/js/main.js",
+    "start": "node server.js"
   },
   "keywords": [
     "webgl",
     "glsl"
   ],
-  "author": "joates (http://joat.es)",
+  "author": "@joat_es (http://joat.es)",
   "license": "MIT"
 }
